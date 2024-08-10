@@ -1,0 +1,40 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+        
+        <!-- row -->
+        <div class="row">
+            <div class="col-xl-9 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Malumotlarni yangilsh</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <input type="text" class="form-control input-rounded" placeholder="Ismi" value="{{ employes.f_name }}" name="f_name">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control input-rounded" placeholder="Familiya" value="{{ employes.l_name }}" name="l_name">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control input-rounded" placeholder="Yoshi" value="{{ employes.age }}" name="age">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control input-rounded" placeholder="Ishi" value="{{ employes.work }}" name="work">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control input-rounded" placeholder="Telefon nomer" value="{{ employes.phone }}" name="phone">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Saqlash</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

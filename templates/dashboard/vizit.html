@@ -1,0 +1,58 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- container starts -->
+            <div class="container-fluid">
+				
+                <!-- row -->
+				<div class="element-area">
+					<div class="demo-view">
+						<div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
+							<div class="row">
+					<!-- Column starts -->
+                    <div class="col-xl-12">
+                        <div class="card dz-card" id="bootstrap-table14"> 
+                            <div class="card-header flex-wrap d-flex justify-content-between  border-0">
+								<div>
+                                	<h4 class="card-title">Kelgan xodimlar</h4>
+								</div>	
+                            </div>
+						<div class="tab-content" id="myTabContent-11">
+							<div class="tab-pane fade show active" id="gradient" role="tabpanel" aria-labelledby="home-tab-11">
+								<div class="card-body pt-0">
+									<div class="table-responsive">
+										<table class="table primary-table-bg-hover">
+											<thead>
+												<tr>
+													<th scope="col">#</th>
+													<th scope="col">Ism Familiya</th>
+													<th scope="col">Kelgan vaqti</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for attendance in attendances %}
+												<tr>
+													<th>{{forloop.counter}}</th>
+													<td>{{attendance.employ.l_name}} {{attendance.employ.f_name}}</td>
+													<td>{{ attendance.visit_time|date:"Y-m-d H:i" }}</td>
+												</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>	
+                        </div>
+                    </div>
+                    <!-- Column ends -->
+					
+				</div>
+					</div>
+				</div>			
+            </div>
+    </div>
+{% endblock %}
